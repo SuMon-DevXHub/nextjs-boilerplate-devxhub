@@ -1,3 +1,4 @@
+import Header from "@/components/shared/Header";
 import { ReactQueryClientProvider } from "@/providers";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -22,8 +23,14 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${poppins.variable} antialiased`}>
-        <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+      <body
+        suppressHydrationWarning
+        className={`${poppins.variable} antialiased min-h-screen flex flex-col`}
+      >
+        <ReactQueryClientProvider>
+          <Header />
+          {children}
+        </ReactQueryClientProvider>
       </body>
     </html>
   );

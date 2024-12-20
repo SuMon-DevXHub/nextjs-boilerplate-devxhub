@@ -20,10 +20,8 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <div className="mt-5">
-      <label htmlFor="language-select" className="mr-2">
-        Select Language:
-      </label>
+    <div className="space-x-2">
+      <label htmlFor="language-select">Select Language:</label>
       <select id="language-select" value={locale} onChange={handleChange}>
         <option value="en">English</option>
         <option value="fr">French</option>
